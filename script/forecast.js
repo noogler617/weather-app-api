@@ -5,14 +5,17 @@ $(document).ready(function(){
 	
 });
 
+//Create the getForecast function
 function getForecast(){
 	var city = $("#city").val();
 	var days = $("#days").val();
 
 	if (city != '' && days != ''){
-
+		
+//Send AJAX request
+		
 		$.ajax({
-			url: 'http://api.openweathermap.org/data/2.5/forecast/daily?q=' + city + '&units=metric' + '&cnt' + days + '&APPID=93503078803b2256419177ea0c2dafec',
+			url: 'http://api.openweathermap.org/data/2.5/forecast/daily?q=' + city + '&units=imperial' + '&cnt' + days + '{ API KEY }',
 			type: 'GET',
 			dataType: 'jsonp',
 			success: function(data){
